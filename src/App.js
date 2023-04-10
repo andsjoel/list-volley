@@ -1,16 +1,17 @@
 import React from 'react';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { PlayersProvider } from './context/PlayersContext';
 import './App.css';
-import AddPlayer from './components/AddPlayer';
-import FirstList from './components/FirstList';
+import Home from './page/Home';
 
 function App() {
   return (
     <PlayersProvider>
-      <div>
-        <AddPlayer />
-        <FirstList />
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path='/' element={ <Home /> } />
+        </Routes>
+      </BrowserRouter>
     </PlayersProvider>
   );
 }
